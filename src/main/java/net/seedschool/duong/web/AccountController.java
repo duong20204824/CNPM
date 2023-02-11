@@ -73,4 +73,10 @@ public class AccountController {
         if(res.get("message").equals("update success")) return new ResponseEntity<>(new JSONPObject("result",res),HttpStatus.OK);
         else return new ResponseEntity<>(new JSONPObject("result",res),HttpStatus.NOT_FOUND);
     }
+    @PutMapping("/add/user")
+    public ResponseEntity<Object> addUser(@RequestBody User user) throws Exception{
+        Map<String,Object> res = accountService.addUser(user);
+        if(res.get("message").equals("add success")) return  new ResponseEntity<>(new JSONPObject("result",res),HttpStatus.OK);
+        else return  new ResponseEntity<>(new JSONPObject("result",res),HttpStatus.NO_CONTENT);
+    }
 }

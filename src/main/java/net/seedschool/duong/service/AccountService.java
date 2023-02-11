@@ -9,4 +9,5 @@ public interface AccountService {
     public Map<String,Object> getAllUsers() throws Exception;
     public Map<String,Object> deleteUser(Long id) throws Exception;
     public  Map<String,Object> updateUser(Long id, User userDetail) throws  Exception;
+    public Map<String,Object> addUser(User user) throws Exception;
 }

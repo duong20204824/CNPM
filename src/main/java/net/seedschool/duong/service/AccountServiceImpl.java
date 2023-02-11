@@ -52,4 +52,17 @@ public class AccountServiceImpl implements AccountService {
         }
         return res;
     }
+
+    @Override
+    public Map<String, Object> addUser(User user) throws Exception {
+        Map<String,Object> res =  new HashMap<>();
+        User user1= userRepository.findByEmail(user.getEmail());
+        if(user1 == null) {
+            userRepository.save(user);
+            res.put("message","add success");
+        } else{
+            res.put("message", "user existed");
+        }
+        return res;
+    }
 }
