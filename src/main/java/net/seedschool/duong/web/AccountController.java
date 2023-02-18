@@ -27,31 +27,7 @@ public class AccountController {
     private AccountService accountService;
     @Autowired
     private UserRepository userRepository;
-//    public AccountController(UserService userService){ this.userService=userService;}
-//    @GetMapping("/view")
-//    public ResponseEntity<Object> getListUser(
-//            @RequestParam(name="pageSize" , required = false, defaultValue = "30") String pageSize,
-//            @RequestParam(name="currentPage", required = false,defaultValue = "1") String currentPage,
-//            @RequestParam(name="keyword", required = false) String keyword
-//    ) throws Exception{
-//        Map<String,Object> resError = new HashMap<>();
-//        JSONObject res;
-//        if(pageSize==null && currentPage==null){
-//            Map<String, Object> users=userService.getListUser(0,0,keyword);
-//            res=new JSONObject(users);
-//            return new ResponseEntity<>(res, HttpStatus.OK);
-//        }
-//        if(!isNumeric(pageSize) || !isNumeric(currentPage)){
-//            resError.put("message","VALUE_NOT_BE_OBTAINED");
-//            resError.put("error","CURRENT_PAGE_OR_NOT_BE_CHARACTER");
-//            res=new JSONObject(resError);
-//        }else {
-//            int intPageSize=Integer.parseInt(pageSize);
-//            int intCurrentPage=Integer.parseInt(currentPage);
-//            Map<String,Object> reqMap=userService.getListUser(intPageSize,intCurrentPage,keyword);
-//            res=new JSONObject(reqMap);
-//        }
-//        return new ResponseEntity<>(res,HttpStatus.OK);
+
     @GetMapping("/")
     public ResponseEntity<Object> getAllUsers() throws Exception{
         Map<String,Object> resMap= accountService.getAllUsers();
